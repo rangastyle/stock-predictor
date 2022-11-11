@@ -25,12 +25,13 @@ def train(ticker="MSFT"):
     df_forecast["ds"] = df_forecast["Date"]
     df_forecast["y"] = df_forecast["Adj Close"]
     df_forecast = df_forecast[["ds", "y"]]
-    df_forecast
+    #df_forecast
 
     model = Prophet()
     model.fit(df_forecast)
 
-    joblib.dump(model, Path(BASE_DIR).joinpath(f"{ticker}.joblib"))
+    #joblib.dump(model, Path(BASE_DIR).joinpath(f"{ticker}.joblib"))
+    joblib.dump(model, Path(BASE_DIR).joinpath(f"{ticker}.joblib"))    
 
 
 def predict(ticker="MSFT", days=7):
